@@ -1,0 +1,73 @@
+﻿@model PAPP4.Models.Libro
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<hr/>
+
+<h3>¿Estás seguro de querer eliminar este libro?</h3>
+<div>
+    
+    <hr />
+    <ul class="list-group container">
+        <li class="list-group-item active">
+            @Html.DisplayNameFor(model => model.IDusuario)
+        </li>
+
+        <li class="list-group-item">
+            @Html.DisplayFor(model => model.IDusuario)
+        </li>
+
+        <li class="list-group-item active">
+            @Html.DisplayNameFor(model => model.NombreLibro)
+        </li>
+
+        <li class="list-group-item">
+            @Html.DisplayFor(model => model.NombreLibro)
+        </li>
+
+        <li class="list-group-item active">
+            @Html.DisplayNameFor(model => model.Editorial)
+        </li>
+
+        <li class="list-group-item">
+            @Html.DisplayFor(model => model.Editorial)
+        </li>
+
+        <li class="list-group-item active">
+            @Html.DisplayNameFor(model => model.NumeroPaginas)
+        </li>
+
+        <li class="list-group-item">
+            @Html.DisplayFor(model => model.NumeroPaginas)
+        </li>
+
+        <li class="list-group-item active">
+            @Html.DisplayNameFor(model => model.estado)
+        </li>
+
+        <li class="list-group-item">
+            @Html.DisplayFor(model => model.estado)
+        </li>
+
+        <li class="list-group-item active">
+            @Html.DisplayNameFor(model => model.PaginaActual)
+        </li>
+
+        <li class="list-group-item">
+            @Html.DisplayFor(model => model.PaginaActual)
+        </li>
+
+    </ul>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-secondary btn-lg" /> |
+            @Html.ActionLink("Volver a lista de libros", "Index")
+        </div>
+    }
+</div>

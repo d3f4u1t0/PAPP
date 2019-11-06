@@ -1,0 +1,83 @@
+﻿@model IEnumerable<PAPP4.Models.Libro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<div class="container" align="center" margin-left="20px">
+    <br></br>
+    <h2 class="card-title">Gestión de libros</h2>
+    <button class="btn btn-secondary btn-lg">
+        @Html.ActionLink("Agregar libro.", "Create")
+    </button>
+    <br></br>
+    <table class="table table-borderless">
+        <thead class="thead-light"
+    <tr>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.IDusuario)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.NombreLibro)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.Editorial)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.NumeroPaginas)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.PaginaActual)
+        </th>
+        <th scope="col">
+            @Html.DisplayNameFor(model => model.Arboles)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDusuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreLibro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Editorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroPaginas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaginaActual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Arboles)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Ver arboles", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+    </table>
+    <br></br>
+    <button class="btn btn-secondary btn-lg">
+        @Html.ActionLink("Cerrar sesión", "Index", "Home")
+    </button>
+</div>
+
+
+
